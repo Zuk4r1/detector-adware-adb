@@ -1,4 +1,4 @@
-# 🔎 Detector Automático de Adware (ADB Tool) — Versión Avanzada.
+# 🔎 Detector Automático de Adware (ADB Tool) - Versión Avanzada.
 
 Herramienta en Batch para Windows que detecta, analiza y elimina automáticamente aplicaciones Android con adware persistente, usando comandos ADB.
 
@@ -72,6 +72,13 @@ Si la app intenta reinstalarse, vuelve a detectarla y eliminarla
     Firma digital: CN=Unknown
     Acción: Inhabilitado (no desinstalable sin root)
 ```
+
+# 🚀 Se aceptan contribuciones para mantener este proyecto
+
+Se aceptan mejoras de código, contribuciones, sugerencias y donaciones para hacer que **detector-adware-adb** sea más efectiva y sostenible.👇
+<br />
+<a href="https://www.paypal.com/paypalme/babiloniaetica"><img title="Donations For Projects" height="25" src="https://ionicabizau.github.io/badges/paypal.svg" /></a>
+</div>
 
 ## ⚠️ Advertencia
 
