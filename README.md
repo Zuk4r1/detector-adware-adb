@@ -73,7 +73,7 @@ Si la app intenta reinstalarse, vuelve a detectarla y eliminarla
     Acción: Inhabilitado (no desinstalable sin root)
 ```
 
-# 🚀 Se aceptan contribuciones para mantener este proyecto
+## 🚀 Se aceptan contribuciones para mantener este proyecto
 
 Se aceptan mejoras de código, contribuciones, sugerencias y donaciones para hacer que **detector-adware-adb** sea más efectiva y sostenible.👇
 <br />
