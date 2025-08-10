@@ -1,18 +1,43 @@
-# 🔎 Detector Automático de Adware (ADB Tool)
+# 🔎 Detector Automático de Adware (ADB Tool) — Versión Avanzada
 
-Este script en lote para Windows permite detectar y eliminar automáticamente aplicaciones Android con comportamiento de **adware intrusivo**, utilizando comandos ADB.
+Herramienta en Batch para Windows que detecta, analiza y elimina automáticamente aplicaciones Android con adware persistente, usando comandos ADB.
 
-Analiza el comportamiento del sistema Android en tiempo real para identificar apps que muestran anuncios emergentes o a pantalla completa sin autorización del usuario.
+Ahora con un rango de detección mucho más amplio, agresivo y profundo, capaz de identificar procesos y apps maliciosas que intenten ocultarse, así como registrar su hash y firma digital antes de eliminarlas o deshabilitarlas.
 
 ---
-## 🚀 Características
+## 🚀 Mejoras y Características Avanzadas
 
-- 🔍 **Detecta automáticamente paquetes sospechosos** desde los logs del sistema (`cmp=`).
-- 🎯 **Extrae el nombre exacto del paquete** desde rutas tipo `cmp=com.ejemplo.app/...`.
-- ✅ Intenta **desinstalar las apps con `--user 0`**, y si falla, **las inhabilita automáticamente**.
-- 📁 **Genera un informe** completo (`informe_adware.txt`) con las acciones realizadas.
-- ❌ Limpia el logcat antes de comenzar para asegurar análisis preciso.
-- 🔐 Funciona **sin root** en dispositivos con depuración USB activada.
+* 🔍 Análisis total del sistema: examina logs, procesos activos, servicios, paquetes instalados y permisos peligrosos.
+
+* 🎯 Detección de apps ocultas: rastrea incluso aquellas que no aparecen en la lista estándar de aplicaciones.
+
+* 🧠 Motor heurístico ampliado: identifica comportamientos de adware aunque el nombre del paquete sea aleatorio o disfrazado.
+
+* 📜 Registro forense: guarda en informe_adware.txt información completa:
+
+Nombre del paquete
+
+Ruta de instalación
+
+Firma digital
+
+Hash SHA-256 del APK
+
+Resultado de desinstalación o inhabilitación
+
+* ⚔️ Eliminación agresiva:
+
+Desinstalación con --user 0
+
+Si falla: inhabilitación forzosa
+
+Si la app intenta reinstalarse, vuelve a detectarla y eliminarla
+
+* 🛡 Protección contra evasión: analiza continuamente para evitar que procesos maliciosos reaparezcan.
+
+* 📁 Informe con evidencia técnica: útil para reportes forenses o auditorías de seguridad.
+
+* 🔐 Funciona sin root (depuración USB activada).
 
 ---
 ## 🛠️ Requisitos
@@ -33,12 +58,19 @@ Analiza el comportamiento del sistema Android en tiempo real para identificar ap
 
 ## 📄 Ejemplo de detección
 
-   ```bat
-[*] Actividad en primer plano: com.storymatrix.drama
-[*] Paquetes detectados mostrando anuncios:
-   - com.storymatrix.drama
-   - games.spearmint.connectanimal
-   - com.tripledot.tile.blossom
+```bat
+[*] Escaneando procesos...
+[+] Detección: com.storymatrix.drama — Adware detectado
+    Ruta: /data/app/com.storymatrix.drama-1/base.apk
+    SHA256: 3A8B9F4E2E91D54B11F2AE9D3C21...
+    Firma digital: CN=Example Ltd, O=Example Org
+    Acción: Eliminado con éxito
+
+[+] Detección: com.tripledot.tile.blossom — Adware detectado
+    Ruta: /data/app/com.tripledot.tile.blossom-1/base.apk
+    SHA256: 92C1D4F3A9E8F7D21A3C...
+    Firma digital: CN=Unknown
+    Acción: Inhabilitado (no desinstalable sin root)
 ```
 
 ## ⚠️ Advertencia
@@ -47,8 +79,10 @@ Analiza el comportamiento del sistema Android en tiempo real para identificar ap
 
 * Las apps que no puedan ser desinstaladas serán inhabilitadas para que no se ejecuten más.
 
+* El uso de esta herramienta debe ser responsable y con autorización sobre el dispositivo analizado.
+
 ## 📜 Licencia
-MIT — Puedes usar, modificar y distribuir libremente esta herramienta con atribución.
+[MIT](https://github.com/Zuk4r1/detector-adware-adb/blob/main/LICENSE) — Puedes usar, modificar y distribuir libremente esta herramienta con atribución.
 
 ## ✍️ Autor
 Creado con ❤️ por [@Zuk4r1](https://github.com/Zuk4r1), pentester con conocimiento en hacking forense móvil y análisis de comportamiento de malware Android.
